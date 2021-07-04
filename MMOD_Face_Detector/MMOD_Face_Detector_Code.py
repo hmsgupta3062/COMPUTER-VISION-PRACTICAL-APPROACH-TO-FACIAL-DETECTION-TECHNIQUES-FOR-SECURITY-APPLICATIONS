@@ -16,7 +16,6 @@ predictor_model = dlib.shape_predictor(predictor_path)
 
 image_files = sorted(os.listdir(images_path))  # get the test images name
 timings = []  # initialise a list to store time complexities of the model on each and every image
-faces_count = []
 
 # initialise a loop to process each and every image once
 for image_name in image_files:
@@ -25,14 +24,12 @@ for image_name in image_files:
     faces = detector_model(image, 1)  # detect the faces in the image using the face detector model
     final_time = time.time()  # record time after detecting faces
     timings.append(final_time - initial_time)  # store the time complexity of the image
-    faces_count.append(len(faces))
 
     # initialise a nested loop to process all the detected faces individually
     for face in faces:
         # process the faces individually, retrieve the coordinates of the bounding boxes and draw them
         face_points = str(face.rect).split()
-        (x1, y1, x2, y2) = int(face_points[0][2:-1]), int(face_points[1][:-1]), int(face_points[2][1:-1]), int(
-            face_points[3][:-2])
+        (x1, y1, x2, y2) = int(face_points[0][2:-1]), int(face_points[1][:-1]), int(face_points[2][1:-1]), int(face_points[3][:-2])
         image = cv2.rectangle(image, (x1, y1), (x2, y2), (0, 0, 255), 3)
 
         # detect the facial landmarks of the current face using the shape predictor model
@@ -46,16 +43,11 @@ for image_name in image_files:
             x3, y3 = point[0, 0], point[0, 1]
             cv2.circle(image, (x3, y3), 2, (255, 0, 0), -1)
 
-    cv2.imshow('dlib CNN Classifier: {}'.format(image_name), image)  # display the resultant image
+    cv2.imshow('MMOD Face Detector: {}'.format(image_name), image)  # display the resultant image
     cv2.imwrite('image_results/{}_result.jpg'.format(image_name.split('.')[0]), image)  # save the resultant image
     cv2.waitKey(0)  # wait for the user to press any key
-    cv2.destroyWindow('dlib CNN Classifier: {}'.format(image_name))  # destroy the current image window
+    cv2.destroyWindow('MMOD Face Detector: {}'.format(image_name))  # destroy the current image window
 
 cv2.destroyAllWindows()  # destroy all the image windows
 
 print(timings)  # print the time complexities of the images
-
-
-print(sum(timings))
-print(sum(timings) / 15)
-print(faces_count)

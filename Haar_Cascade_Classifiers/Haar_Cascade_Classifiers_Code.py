@@ -12,7 +12,6 @@ model = cv2.CascadeClassifier(model_path)
 
 image_files = sorted(os.listdir(images_path))  # get the test images name
 timings = []  # initialise a list to store time complexities of the model on each and every image
-faces_count = []
 
 # initialise a loop to process each and every image once
 for image_name in image_files:
@@ -22,7 +21,6 @@ for image_name in image_files:
     faces = model.detectMultiScale(image_gray, 1.25, 4)  # detect the faces in the image using the face detector model
     final_time = time.time()  # record time after detecting faces
     timings.append(final_time - initial_time)  # store the time complexity of the image
-    faces_count.append(len(faces))
 
     # initialise a nested loop to process all the detected faces individually
     for (x, y, w, h) in faces:
@@ -37,8 +35,3 @@ for image_name in image_files:
 cv2.destroyAllWindows()  # destroy all the image windows
 
 print(timings)  # print the time complexities of the images
-
-
-print(sum(timings))
-print(sum(timings) / 15)
-print(faces_count)
