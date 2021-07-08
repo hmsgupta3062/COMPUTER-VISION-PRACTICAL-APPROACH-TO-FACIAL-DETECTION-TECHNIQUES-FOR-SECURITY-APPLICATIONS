@@ -1,7 +1,5 @@
 # COMPUTER-VISION-PRACTICAL-APPROACH-TO-FACIAL-DETECTION-TECHNIQUES-FOR-SECURITY-APPLICATIONS
 
-## MMOD Face Detector
-
 ### Name of the Models Used
 
 1. 'mmod_human_face_detector.dat'
