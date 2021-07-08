@@ -1,7 +1,5 @@
 # COMPUTER-VISION-PRACTICAL-APPROACH-TO-FACIAL-DETECTION-TECHNIQUES-FOR-SECURITY-APPLICATIONS
 
-## HOG Face Detector
-
 ### Name of the Models Used
 
 1. 'shape_predictor_68_face_landmarks.dat'
