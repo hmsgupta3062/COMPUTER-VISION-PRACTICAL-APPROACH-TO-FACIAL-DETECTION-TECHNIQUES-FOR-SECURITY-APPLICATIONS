@@ -1,4 +1,4 @@
-# COMPUTER-VISION-PRACTICAL-APPROACH-TO-FACIAL-DETECTION-TECHNIQUES-FOR-SECURITY-APPLICATIONS
+# Chapter on Facial Detection Techniques
 
 ### Name of the Models Used
 
@@ -9,4 +9,3 @@
 ### Link of the Models
 
 https://drive.google.com/drive/folders/1WTHFh9OTl7Rzk8mO_p7FWs260ZFfwHYZ?usp=sharing
-
