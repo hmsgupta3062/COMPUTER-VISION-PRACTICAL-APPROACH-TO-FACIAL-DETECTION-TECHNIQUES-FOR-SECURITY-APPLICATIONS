@@ -1,4 +1,4 @@
-# COMPUTER-VISION-PRACTICAL-APPROACH-TO-FACIAL-DETECTION-TECHNIQUES-FOR-SECURITY-APPLICATIONS
+# Chapter on Facial Detection Techniques
 
 ## About the repository
 
